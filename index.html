@@ -1,271 +1,753 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="​Traveling is a unique life experience, Destinations to Inspire Adventure, The Air Smells Ocean, ​We are the best travel agency to improve your deals, About Agency">
-    <meta name="description" content="">
-    <title>Maria Habib</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Home.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 6.5.4, nicepage.com">
-    <meta name="referrer" content="origin">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-    
-    
-    
-    
-    
-    
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "images/images-removebg-preview.png"
-}</script>
-    <meta name="theme-color" content="#c684a0">
-    <meta property="og:title" content="Home">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-sticky u-sticky-7cfd u-header" id="sec-49fd"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="225" data-image-height="225">
-          <img src="images/images-removebg-preview.png" class="u-logo-image u-logo-image-1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeWith Maria — Full Stack Python & Web Dev Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0f1923; --ink-soft: #3d4f5c; --ink-muted: #7a8c99;
+    --teal: #0ea5a0; --teal-dark: #0c8a85; --teal-light: #e6f7f7; --teal-mid: #b2e8e6;
+    --gold: #d4a853; --gold-light: #fdf5e6;
+    --surface: #f8fafb; --white: #ffffff; --border: #e2eaee;
+    --radius: 12px; --radius-lg: 20px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; height: 68px;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--ink); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .nav-logo span { color: var(--teal); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta { background: var(--teal); color: #fff; border: none; border-radius: 8px; padding: 9px 20px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Inter',sans-serif; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+  /* HERO */
+  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 68px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 8%; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--teal-light); color: var(--teal-dark); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; padding: 6px 14px; border-radius: 20px; margin-bottom: 1.75rem; border: 1px solid var(--teal-mid); width: fit-content; }
+  .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(36px,4vw,56px); line-height: 1.15; color: var(--ink); margin-bottom: 1.25rem; }
+  .hero-title em { font-style: normal; color: var(--teal); }
+  .hero-sub { font-size: 16px; color: var(--ink-soft); line-height: 1.75; max-width: 440px; margin-bottom: 2.25rem; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3rem; }
+  .btn-main { background: var(--teal); color: #fff; padding: 13px 28px; border-radius: 10px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; font-family: 'Inter',sans-serif; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 14px rgba(14,165,160,0.3); }
+  .btn-main:hover { background: var(--teal-dark); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--ink); padding: 13px 28px; border-radius: 10px; font-size: 14px; font-weight: 500; border: 1.5px solid var(--border); cursor: pointer; font-family: 'Inter',sans-serif; text-decoration: none; display: inline-block; transition: border-color 0.2s, background 0.2s; }
+  .btn-ghost:hover { border-color: var(--teal); background: var(--teal-light); }
+  .hero-stats { display: flex; gap: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+  .hstat-num { font-size: 26px; font-weight: 700; color: var(--teal); font-family: 'Playfair Display',serif; }
+  .hstat-label { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+
+  /* HERO RIGHT — illustrated panel */
+  .hero-right { background: #0c2233; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 3rem; gap: 2rem; position: relative; overflow: hidden; }
+  .hero-right::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: rgba(14,165,160,0.12); }
+  .hero-right::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 220px; height: 220px; border-radius: 50%; background: rgba(14,165,160,0.08); }
+  .code-window { background: #1a3344; border-radius: 14px; padding: 0; width: 100%; max-width: 400px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 60px rgba(0,0,0,0.4); overflow: hidden; position: relative; z-index: 1; }
+  .code-titlebar { background: #152a3a; padding: 12px 16px; display: flex; align-items: center; gap: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+  .code-filename { font-size: 12px; color: rgba(255,255,255,0.4); margin-left: auto; font-family: monospace; }
+  .code-body { padding: 20px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.8; }
+  .c-keyword { color: #c792ea; } .c-fn { color: #82aaff; } .c-str { color: #c3e88d; }
+  .c-cls { color: #ffcb6b; } .c-comment { color: #546e7a; } .c-var { color: #f78c6c; }
+  .c-white { color: #eeffff; }
+  .hero-quote-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 400px; position: relative; z-index: 1; }
+  .hero-quote-card p { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.65; font-style: italic; margin-bottom: 10px; }
+  .hero-quote-author { font-size: 12px; color: var(--teal); font-weight: 600; }
+
+  /* SECTIONS */
+  section { padding: 6rem 8%; }
+  .section-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--teal); text-transform: uppercase; margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px,3vw,40px); color: var(--ink); margin-bottom: 1rem; line-height: 1.25; }
+  .section-sub { font-size: 16px; color: var(--ink-soft); max-width: 560px; line-height: 1.75; }
+  .section-header { margin-bottom: 3.5rem; }
+
+  /* ABOUT */
+  #about { background: var(--surface); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; }
+  .about-visual { position: relative; }
+  .avatar-large {
+    width: 100%; aspect-ratio: 4/5; border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #0c2233 0%, #0ea5a0 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15); overflow: hidden; position: relative;
+  }
+  .avatar-initials { font-family: 'Playfair Display',serif; font-size: 100px; color: rgba(255,255,255,0.15); font-weight: 700; position: absolute; }
+  .avatar-svg { position: relative; z-index: 1; }
+  .about-badge-float {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    background: var(--white); border-radius: var(--radius); padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12); border: 1px solid var(--border);
+  }
+  .about-badge-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .about-badge-text { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .about-badge-sub { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+  .about-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.75rem 0; }
+  .chip { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: var(--ink-soft); }
+  .chip.teal { background: var(--teal-light); border-color: var(--teal-mid); color: var(--teal-dark); font-weight: 500; }
+  .cert-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--ink-soft); }
+  .cert-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+  /* ROADMAP */
+  #roadmap { background: var(--white); }
+  .roadmap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .phase-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; cursor: default; }
+  .phase-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+  .phase-card::before { content: attr(data-phase); position: absolute; top: -10px; right: 20px; font-family: 'Playfair Display',serif; font-size: 80px; font-weight: 700; color: rgba(14,165,160,0.07); line-height: 1; }
+  .phase-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 6px; margin-bottom: 1rem; }
+  .phase-tag.g1{background:#e6f7f7;color:#0c8a85}.phase-tag.g2{background:#e8f0fe;color:#1a56db}.phase-tag.g3{background:#fdf5e6;color:#b45309}.phase-tag.g4{background:#fce8e8;color:#b91c1c}
+  .phase-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.35; }
+  .phase-dur { font-size: 12px; color: var(--ink-muted); margin-bottom: 1.25rem; }
+  .topic-list { list-style: none; }
+  .topic-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--ink-soft); padding: 4px 0; }
+  .topic-list li::before { content: '→'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  /* PROJECTS */
+  #projects { background: #0f1923; color: #fff; }
+  #projects .section-title { color: #fff; }
+  #projects .section-sub { color: rgba(255,255,255,0.6); }
+  .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+  .project-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.25s, border-color 0.25s; }
+  .project-card:hover { transform: translateY(-5px); border-color: var(--teal); }
+  .project-thumb { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .project-body { padding: 1.5rem; }
+  .project-num { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 8px; }
+  .project-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+  .project-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 1rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .project-tag { background: rgba(14,165,160,0.15); color: #5ecec8; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 6px; }
+
+  /* SESSIONS */
+  #sessions { background: var(--surface); }
+  .sessions-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+  .session-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .session-card:hover { transform: translateY(-4px); box-shadow: 0 10px 35px rgba(0,0,0,0.08); }
+  .session-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 1.25rem; }
+  .session-icon.s1{background:var(--teal-light)}.session-icon.s2{background:#e8f0fe}.session-icon.s3{background:var(--gold-light)}
+  .session-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 0.5rem; }
+  .session-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+  .session-meta { margin-top: 1.25rem; font-size: 12px; font-weight: 600; color: var(--teal); }
+
+  /* STACK */
+  #stack { background: var(--white); }
+  .stack-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+  .stack-cat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+  .stack-cat-title { font-size: 13px; font-weight: 700; color: var(--teal); margin-bottom: 1rem; letter-spacing: 0.03em; }
+  .stack-item { font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+  .stack-item::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--teal); flex-shrink:0; }
+
+  /* PRICING */
+  #pricing { background: var(--surface); }
+  #pricing .section-header { text-align: center; }
+  #pricing .section-header .section-sub { margin: 0 auto; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; max-width: 900px; margin: 0 auto; }
+  .plan-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 2.25rem; transition: transform 0.2s; }
+  .plan-card:hover { transform: translateY(-4px); }
+  .plan-card.featured { border-color: var(--teal); box-shadow: 0 8px 30px rgba(14,165,160,0.18); position: relative; }
+  .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--teal); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
+  .plan-name { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink-muted); margin-bottom: 0.75rem; text-transform: uppercase; }
+  .plan-price { font-family: 'Playfair Display',serif; font-size: 42px; color: var(--ink); line-height: 1; margin-bottom: 0.25rem; }
+  .plan-price span { font-size: 16px; font-family: 'Inter',sans-serif; font-weight: 400; color: var(--ink-muted); }
+  .plan-desc { font-size: 13px; color: var(--ink-muted); margin-bottom: 1.75rem; }
+  .plan-features { list-style: none; margin-bottom: 2rem; }
+  .plan-features li { font-size: 14px; color: var(--ink-soft); padding: 7px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; }
+  .plan-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+  .plan-btn { width: 100%; padding: 12px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Inter',sans-serif; transition: all 0.2s; }
+  .plan-btn.outline { background: transparent; border: 1.5px solid var(--border); color: var(--ink); }
+  .plan-btn.outline:hover { border-color: var(--teal); background: var(--teal-light); }
+  .plan-btn.solid { background: var(--teal); border: none; color: #fff; box-shadow: 0 4px 14px rgba(14,165,160,0.3); }
+  .plan-btn.solid:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+  /* CONTACT */
+  #contact { background: var(--white); }
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info h3 { font-family: 'Playfair Display',serif; font-size: 28px; margin-bottom: 1rem; }
+  .contact-info p { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 14px; }
+  .contact-link { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+  .contact-link:hover { color: var(--teal); }
+  .contact-link-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--teal-light); color: var(--teal-dark); display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  label { font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+  input, textarea, select { padding: 11px 14px; border-radius: 10px; border: 1.5px solid var(--border); background: var(--surface); font-size: 14px; color: var(--ink); font-family: 'Inter',sans-serif; transition: border-color 0.2s; outline: none; }
+  input:focus, textarea:focus, select:focus { border-color: var(--teal); background: var(--white); }
+  textarea { min-height: 110px; resize: vertical; }
+  .submit-btn { background: var(--teal); color: #fff; border: none; padding: 13px 28px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Inter',sans-serif; transition: all 0.2s; align-self: flex-start; box-shadow: 0 4px 14px rgba(14,165,160,0.3); }
+  .submit-btn:hover { background: var(--teal-dark); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer { background: var(--ink); color: rgba(255,255,255,0.45); text-align: center; padding: 2.5rem 8%; font-size: 13px; }
+  footer span { color: var(--teal); }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 6%; }
+    .hero-right { min-height: 360px; padding: 3rem 6%; }
+    .about-grid,.contact-wrap { grid-template-columns: 1fr; gap: 3rem; }
+    .roadmap-grid,.projects-grid { grid-template-columns: 1fr; }
+    .sessions-row,.pricing-grid,.stack-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 4rem 6%; }
+    .nav-links { display: none; }
+    .about-badge-float { right: 0; bottom: -1rem; }
+  }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="#hero">Code<span>With</span> Maria</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#sessions">Sessions</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Book a session →</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><div class="pulse"></div> Available for new students · Kuala Lumpur, MY</div>
+    <h1 class="hero-title">Learn to build<br><em>full stack apps</em><br>from scratch</h1>
+    <p class="hero-sub">Structured 1-on-1 mentorship in Python, Django, React, and PostgreSQL — guided by a software engineer with 3+ years of production experience and a real passion for teaching.</p>
+    <div class="hero-actions">
+      <a class="btn-main" href="#roadmap">See learning roadmap →</a>
+      <a class="btn-ghost" href="#about">Meet Maria</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-num">3+</div><div class="hstat-label">Years in industry</div></div>
+      <div><div class="hstat-num">8+</div><div class="hstat-label">Projects shipped</div></div>
+      <div><div class="hstat-num">3.89</div><div class="hstat-label">Software Eng. CGPA</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Animated code window -->
+    <div class="code-window">
+      <div class="code-titlebar">
+        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+        <span class="code-filename">views.py</span>
+      </div>
+      <div class="code-body">
+        <div><span class="c-keyword">from</span> <span class="c-white">django.db</span> <span class="c-keyword">import</span> <span class="c-white">models</span></div>
+        <div><span class="c-keyword">from</span> <span class="c-white">rest_framework</span> <span class="c-keyword">import</span> <span class="c-white">serializers</span></div>
+        <div>&nbsp;</div>
+        <div><span class="c-comment"># Your first API endpoint</span></div>
+        <div><span class="c-keyword">class</span> <span class="c-cls">StudentViewSet</span><span class="c-white">(ViewSet):</span></div>
+        <div>&nbsp;&nbsp;<span class="c-keyword">def</span> <span class="c-fn">list</span><span class="c-white">(</span><span class="c-var">self</span><span class="c-white">, request):</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-var">students</span> <span class="c-white">= Student.objects</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-white">.filter(</span><span class="c-var">active</span><span class="c-white">=</span><span class="c-keyword">True</span><span class="c-white">)</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-keyword">return</span> <span class="c-fn">Response</span><span class="c-white">({</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"status"</span><span class="c-white">: </span><span class="c-str">"success"</span><span class="c-white">,</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"data"</span><span class="c-white">: serializer.data</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-white">})</span></div>
+      </div>
+    </div>
+    <div class="hero-quote-card">
+      <p>"The best way to learn programming is to build real things with someone who's already done it."</p>
+      <div class="hero-quote-author">— Maria Habib, Full Stack Engineer</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="avatar-large">
+        <div class="avatar-initials">MH</div>
+        <!-- Developer illustration SVG -->
+        <svg class="avatar-svg" width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- desk -->
+          <rect x="20" y="170" width="160" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+          <!-- laptop base -->
+          <rect x="50" y="145" width="100" height="28" rx="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <!-- laptop screen -->
+          <rect x="52" y="95" width="96" height="55" rx="5" fill="#0c2233" stroke="rgba(14,165,160,0.6)" stroke-width="1.5"/>
+          <!-- screen content -->
+          <rect x="60" y="104" width="50" height="4" rx="2" fill="rgba(14,165,160,0.7)"/>
+          <rect x="60" y="113" width="70" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+          <rect x="60" y="120" width="55" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="60" y="127" width="65" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+          <rect x="60" y="134" width="40" height="3" rx="1.5" fill="rgba(14,165,160,0.5)"/>
+          <!-- person body -->
+          <ellipse cx="100" cy="72" rx="18" ry="22" fill="rgba(255,255,255,0.15)"/>
+          <!-- head -->
+          <circle cx="100" cy="42" r="20" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <!-- face details -->
+          <circle cx="93" cy="40" r="2.5" fill="rgba(14,165,160,0.8)"/>
+          <circle cx="107" cy="40" r="2.5" fill="rgba(14,165,160,0.8)"/>
+          <path d="M93 50 Q100 55 107 50" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- arms -->
+          <path d="M82 78 Q65 100 68 140" stroke="rgba(255,255,255,0.15)" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M118 78 Q135 100 132 140" stroke="rgba(255,255,255,0.15)" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <!-- floating icons -->
+          <circle cx="30" cy="60" r="14" fill="rgba(14,165,160,0.2)" stroke="rgba(14,165,160,0.4)" stroke-width="1"/>
+          <text x="30" y="65" font-size="12" text-anchor="middle" fill="rgba(14,165,160,0.9)">{ }</text>
+          <circle cx="170" cy="80" r="14" fill="rgba(212,168,83,0.2)" stroke="rgba(212,168,83,0.4)" stroke-width="1"/>
+          <text x="170" y="85" font-size="11" text-anchor="middle" fill="rgba(212,168,83,0.9)">⚡</text>
+          <circle cx="22" cy="120" r="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <text x="22" y="125" font-size="9" text-anchor="middle" fill="rgba(255,255,255,0.5)">py</text>
+        </svg>
+      </div>
+      <div class="about-badge-float">
+        <div class="about-badge-icon">🏆</div>
+        <div>
+          <div class="about-badge-text">Certified White Hat Hacker</div>
+          <div class="about-badge-sub">Lahore Garrison University</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="section-eyebrow">Your coach</div>
+      <h2 class="section-title">Maria Habib</h2>
+      <p style="font-size:15px;color:var(--ink-soft);line-height:1.8;margin-bottom:1rem;">Full Stack Software Engineer with 3+ years delivering secure, scalable web applications — and a track record of teaching at Curioso Technologies, where she trained students in Python, Scratch, and web development through remote sessions and project-based learning.</p>
+      <p style="font-size:15px;color:var(--ink-soft);line-height:1.8;">Previously at Arkhitech building enterprise-grade Ruby on Rails + React solutions, and at Digital Forensics Research Center developing Python automation for cybersecurity. She brings real production experience to every coaching session.</p>
+      <div class="about-chips">
+        <span class="chip teal">Python</span><span class="chip teal">Django</span><span class="chip teal">React</span>
+        <span class="chip teal">PostgreSQL</span><span class="chip">RESTful APIs</span>
+        <span class="chip">Cybersecurity</span><span class="chip">Mentorship</span><span class="chip">Agile</span>
+      </div>
+      <div class="cert-item"><div class="cert-dot"></div> Programming Foundations — Duke University</div>
+      <div class="cert-item"><div class="cert-dot"></div> Python Basics — University of Michigan</div>
+      <div class="cert-item"><div class="cert-dot"></div> Certified White Hat Hacker — Lahore Garrison University</div>
+      <div class="cert-item"><div class="cert-dot"></div> BSc Software Engineering, CGPA 3.89 / 4.0</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROADMAP ═══ -->
+<section id="roadmap">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Learning path</div>
+    <h2 class="section-title">Your structured 18-week roadmap</h2>
+    <p class="section-sub">Four phases, each ending with a real portfolio project reviewed by Maria personally.</p>
+  </div>
+  <div class="roadmap-grid">
+    <div class="phase-card reveal" data-phase="1">
+      <div class="phase-tag g1">PHASE 1 · WEEKS 1–3</div>
+      <h3>Python & Programming Foundations</h3>
+      <p class="phase-dur">Beginner · No prior experience needed</p>
+      <ul class="topic-list">
+        <li>Python syntax, data types & control flow</li>
+        <li>Functions, modules & OOP fundamentals</li>
+        <li>File I/O, error handling & debugging</li>
+        <li>Git version control & CLI basics</li>
+        <li>Mini project: command-line task manager</li>
+      </ul>
+    </div>
+    <div class="phase-card reveal" data-phase="2">
+      <div class="phase-tag g2">PHASE 2 · WEEKS 4–8</div>
+      <h3>Web Backend: Django & PostgreSQL</h3>
+      <p class="phase-dur">Intermediate · MVC architecture & databases</p>
+      <ul class="topic-list">
+        <li>Django models, views & URL routing</li>
+        <li>REST APIs with Django REST Framework</li>
+        <li>PostgreSQL & query optimization</li>
+        <li>Authentication, authorization & security</li>
+        <li>Project: full blog API with user auth</li>
+      </ul>
+    </div>
+    <div class="phase-card reveal" data-phase="3">
+      <div class="phase-tag g3">PHASE 3 · WEEKS 9–13</div>
+      <h3>Frontend: HTML, CSS, JS & React</h3>
+      <p class="phase-dur">Intermediate · Building interactive UIs</p>
+      <ul class="topic-list">
+        <li>HTML5 semantics & CSS3 / Tailwind</li>
+        <li>JavaScript ES6+: async/await, fetch API</li>
+        <li>React components, hooks & state</li>
+        <li>Connecting frontend to your Django API</li>
+        <li>Project: React analytics dashboard</li>
+      </ul>
+    </div>
+    <div class="phase-card reveal" data-phase="4">
+      <div class="phase-tag g4">PHASE 4 · WEEKS 14–18</div>
+      <h3>Capstone: Full Stack App + Job Readiness</h3>
+      <p class="phase-dur">Advanced · Ship & present a real product</p>
+      <ul class="topic-list">
+        <li>Full stack Django + React e-commerce app</li>
+        <li>Stripe payment & third-party integrations</li>
+        <li>Testing with pytest & end-to-end Selenium</li>
+        <li>Deployment on Render / Railway / Heroku</li>
+        <li>Portfolio review & interview preparation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Hands-on learning</div>
+    <h2 class="section-title">Projects you'll build & own</h2>
+    <p class="section-sub">Every project is deployable, portfolio-ready, and reviewed by Maria.</p>
+  </div>
+  <div class="projects-grid">
+
+    <!-- Project thumbnails as inline SVGs -->
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#1a3344,#0c2233)">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+          <rect x="10" y="15" width="100" height="70" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(14,165,160,0.4)" stroke-width="1"/>
+          <rect x="18" y="25" width="40" height="4" rx="2" fill="rgba(14,165,160,0.7)"/>
+          <rect x="18" y="34" width="60" height="3" rx="1.5" fill="rgba(255,255,255,0.3)"/>
+          <rect x="18" y="42" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="18" y="50" width="65" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="18" y="58" width="35" height="3" rx="1.5" fill="rgba(14,165,160,0.5)"/>
+          <text x="60" y="74" font-size="9" text-anchor="middle" fill="rgba(14,165,160,0.6)" font-family="monospace">$ python main.py</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <div class="project-num">PROJECT 01</div>
+        <div class="project-title">CLI Task Manager</div>
+        <div class="project-desc">A Python command-line app to manage and persist tasks. Your first real OOP project with Git workflow.</div>
+        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">OOP</span><span class="project-tag">Git</span></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#1a2d44,#0f1d30)">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+          <circle cx="60" cy="42" r="24" fill="rgba(14,165,160,0.12)" stroke="rgba(14,165,160,0.4)" stroke-width="1.5"/>
+          <path d="M48 42 L60 30 L72 42 M60 30 L60 60" stroke="rgba(14,165,160,0.7)" stroke-width="2" stroke-linecap="round"/>
+          <rect x="30" y="70" width="20" height="12" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <rect x="55" y="70" width="20" height="12" rx="3" fill="rgba(14,165,160,0.2)" stroke="rgba(14,165,160,0.5)" stroke-width="1"/>
+          <rect x="80" y="70" width="20" height="12" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="40" y="79" font-size="7" text-anchor="middle" fill="rgba(255,255,255,0.4)">GET</text>
+          <text x="65" y="79" font-size="7" text-anchor="middle" fill="rgba(14,165,160,0.9)">POST</text>
+          <text x="90" y="79" font-size="7" text-anchor="middle" fill="rgba(255,255,255,0.4)">DEL</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <div class="project-num">PROJECT 02</div>
+        <div class="project-title">Blog API with Auth</div>
+        <div class="project-desc">A Django REST API with JWT authentication, CRUD operations, and a PostgreSQL backend.</div>
+        <div class="project-tags"><span class="project-tag">Django</span><span class="project-tag">DRF</span><span class="project-tag">PostgreSQL</span></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#0d2535,#142033)">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+          <rect x="10" y="20" width="100" height="60" rx="5" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <rect x="18" y="28" width="30" height="16" rx="3" fill="rgba(14,165,160,0.2)" stroke="rgba(14,165,160,0.4)" stroke-width="1"/>
+          <rect x="54" y="28" width="22" height="16" rx="3" fill="rgba(212,168,83,0.15)" stroke="rgba(212,168,83,0.3)" stroke-width="1"/>
+          <rect x="82" y="28" width="22" height="16" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <!-- bar chart -->
+          <rect x="18" y="55" width="12" height="18" rx="2" fill="rgba(14,165,160,0.6)"/>
+          <rect x="34" y="48" width="12" height="25" rx="2" fill="rgba(14,165,160,0.5)"/>
+          <rect x="50" y="42" width="12" height="31" rx="2" fill="rgba(14,165,160,0.7)"/>
+          <rect x="66" y="52" width="12" height="21" rx="2" fill="rgba(14,165,160,0.4)"/>
+          <rect x="82" y="46" width="12" height="27" rx="2" fill="rgba(14,165,160,0.6)"/>
+        </svg>
+      </div>
+      <div class="project-body">
+        <div class="project-num">PROJECT 03</div>
+        <div class="project-title">React Dashboard</div>
+        <div class="project-desc">A data visualization dashboard in React with Tailwind, pulling live data from your Django API.</div>
+        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Tailwind</span><span class="project-tag">REST</span></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#12293a,#0c1e2d)">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+          <!-- shopping bag -->
+          <rect x="30" y="38" width="60" height="46" rx="5" fill="rgba(14,165,160,0.15)" stroke="rgba(14,165,160,0.5)" stroke-width="1.5"/>
+          <path d="M45 38 Q45 22 60 22 Q75 22 75 38" stroke="rgba(14,165,160,0.6)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <rect x="40" y="52" width="40" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="40" y="60" width="25" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="85" cy="25" r="10" fill="rgba(14,165,160,0.9)"/>
+          <text x="85" y="29" font-size="10" text-anchor="middle" fill="white" font-weight="bold">$</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <div class="project-num">CAPSTONE</div>
+        <div class="project-title">Full Stack E-Commerce</div>
+        <div class="project-desc">Inspired by Howmuch.pk — products, cart, Stripe payments, and reporting dashboard. Fully deployed.</div>
+        <div class="project-tags"><span class="project-tag">Django</span><span class="project-tag">React</span><span class="project-tag">Stripe</span><span class="project-tag">PostgreSQL</span></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#1a2a3a,#112030)">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+          <!-- calendar -->
+          <rect x="20" y="22" width="80" height="60" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <rect x="20" y="22" width="80" height="18" rx="6" fill="rgba(14,165,160,0.3)"/>
+          <rect x="20" y="34" width="80" height="6" fill="rgba(14,165,160,0.3)"/>
+          <circle cx="38" cy="18" r="4" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="82" cy="18" r="4" fill="rgba(255,255,255,0.3)"/>
+          <text x="60" y="33" font-size="8" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-weight="bold">JUNE 2026</text>
+          <rect x="28" y="48" width="10" height="10" rx="2" fill="rgba(14,165,160,0.4)"/>
+          <rect x="44" y="48" width="10" height="10" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="60" y="48" width="10" height="10" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="76" y="48" width="10" height="10" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="28" y="63" width="10" height="10" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="44" y="63" width="10" height="10" rx="2" fill="rgba(212,168,83,0.4)"/>
+          <rect x="60" y="63" width="10" height="10" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="76" y="63" width="10" height="10" rx="2" fill="rgba(255,255,255,0.1)"/>
+        </svg>
+      </div>
+      <div class="project-body">
+        <div class="project-num">BONUS</div>
+        <div class="project-title">Appointment Booking App</div>
+        <div class="project-desc">A booking platform with Flask, SQLite, and Stripe — based on CoachingLifeNY, a project Maria shipped.</div>
+        <div class="project-tags"><span class="project-tag">Flask</span><span class="project-tag">Python</span><span class="project-tag">Stripe</span></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#0d1f2d,#142033)">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+          <!-- chatbot -->
+          <rect x="15" y="15" width="55" height="38" rx="8" fill="rgba(14,165,160,0.2)" stroke="rgba(14,165,160,0.5)" stroke-width="1.5"/>
+          <polygon points="30,53 20,65 42,53" fill="rgba(14,165,160,0.2)" stroke="rgba(14,165,160,0.5)" stroke-width="1"/>
+          <rect x="24" y="24" width="30" height="4" rx="2" fill="rgba(255,255,255,0.4)"/>
+          <rect x="24" y="33" width="38" height="4" rx="2" fill="rgba(255,255,255,0.25)"/>
+          <rect x="24" y="42" width="22" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+          <!-- user bubble -->
+          <rect x="55" y="50" width="50" height="28" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <polygon points="90,78 105,85 88,78" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <rect x="63" y="58" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.3)"/>
+          <rect x="63" y="66" width="34" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          <!-- brain/ML indicator -->
+          <circle cx="95" cy="25" r="12" fill="rgba(212,168,83,0.15)" stroke="rgba(212,168,83,0.4)" stroke-width="1"/>
+          <text x="95" y="29" font-size="11" text-anchor="middle" fill="rgba(212,168,83,0.9)">🧠</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <div class="project-num">BONUS</div>
+        <div class="project-title">Healthcare Chatbot</div>
+        <div class="project-desc">A Python + Flask ML chatbot with symptom prediction — feature engineering, RESTful APIs, and model tuning.</div>
+        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Flask</span><span class="project-tag">ML</span><span class="project-tag">SQL</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ SESSIONS ═══ -->
+<section id="sessions">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">How we work together</div>
+    <h2 class="section-title">Three ways to learn</h2>
+    <p class="section-sub">A blend of live coaching, self-paced practice, and expert code review — designed to build real habits fast.</p>
+  </div>
+  <div class="sessions-row">
+    <div class="session-card reveal">
+      <div class="session-icon s1">🎥</div>
+      <h3>Live 1-on-1 Coaching</h3>
+      <p>60-minute Zoom sessions twice a week. Concept walkthroughs, Q&A, live pair programming, and debugging on your actual project.</p>
+      <div class="session-meta">2× per week · Zoom</div>
+    </div>
+    <div class="session-card reveal">
+      <div class="session-icon s2">📝</div>
+      <h3>Practical Assignments</h3>
+      <p>Weekly coding tasks that reinforce the week's concepts. Submitted via GitHub so Maria can review your exact approach and thought process.</p>
+      <div class="session-meta">Self-paced · GitHub</div>
+    </div>
+    <div class="session-card reveal">
+      <div class="session-icon s3">🔍</div>
+      <h3>Expert Code Review</h3>
+      <p>Detailed written feedback on every submission — covering architecture, code readability, security practices, and industry patterns.</p>
+      <div class="session-meta">48hr turnaround · Written</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STACK ═══ -->
+<section id="stack">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Tech covered</div>
+    <h2 class="section-title">The full stack you'll master</h2>
+    <p class="section-sub">The same technologies Maria uses in production — not just tutorials.</p>
+  </div>
+  <div class="stack-grid reveal">
+    <div class="stack-cat">
+      <div class="stack-cat-title">Languages</div>
+      <div class="stack-item">Python (primary)</div>
+      <div class="stack-item">JavaScript ES6+</div>
+      <div class="stack-item">SQL</div>
+      <div class="stack-item">HTML5 & CSS3</div>
+    </div>
+    <div class="stack-cat">
+      <div class="stack-cat-title">Backend</div>
+      <div class="stack-item">Django & DRF</div>
+      <div class="stack-item">FastAPI / Flask</div>
+      <div class="stack-item">RESTful API design</div>
+      <div class="stack-item">Auth & security</div>
+    </div>
+    <div class="stack-cat">
+      <div class="stack-cat-title">Frontend</div>
+      <div class="stack-item">React.js & Hooks</div>
+      <div class="stack-item">Tailwind CSS</div>
+      <div class="stack-item">Bootstrap</div>
+      <div class="stack-item">Responsive design</div>
+    </div>
+    <div class="stack-cat">
+      <div class="stack-cat-title">Tools & DB</div>
+      <div class="stack-item">PostgreSQL / MySQL</div>
+      <div class="stack-item">Git & GitHub</div>
+      <div class="stack-item">pytest & Selenium</div>
+      <div class="stack-item">Agile / Scrum</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="pricing">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Simple pricing</div>
+    <h2 class="section-title">Pick your intensity</h2>
+    <p class="section-sub">All plans include the full 18-week roadmap, project source code, and personal feedback from Maria.</p>
+  </div>
+  <div class="pricing-grid reveal">
+    <div class="plan-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">$30<span> /hr</span></div>
+      <p class="plan-desc">Flexible pace for learners with busy schedules.</p>
+      <ul class="plan-features">
+        <li>1 live session per week</li>
+        <li>Assignment review via GitHub</li>
+        <li>Written feedback within 72 hours</li>
+        <li>Full roadmap access</li>
+      </ul>
+      <button class="plan-btn outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</button>
+    </div>
+    <div class="plan-card featured">
+      <div class="featured-badge">Most popular</div>
+      <div class="plan-name">Accelerated</div>
+      <div class="plan-price">$55<span> /wk</span></div>
+      <p class="plan-desc">The recommended pace for fast, consistent progress.</p>
+      <ul class="plan-features">
+        <li>2 live sessions per week</li>
+        <li>Priority code review (48hr)</li>
+        <li>Pair programming on projects</li>
+        <li>Slack access for quick questions</li>
+        <li>Full roadmap access</li>
+      </ul>
+      <button class="plan-btn solid" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book this plan</button>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Intensive</div>
+      <div class="plan-price">$180<span> /mo</span></div>
+      <p class="plan-desc">For learners targeting a developer job in under 5 months.</p>
+      <ul class="plan-features">
+        <li>Daily async check-ins</li>
+        <li>Unlimited code review</li>
+        <li>Mock technical interviews</li>
+        <li>Portfolio & LinkedIn review</li>
+        <li>Full roadmap access</li>
+      </ul>
+      <button class="plan-btn outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Get in touch</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:1rem;">Ready to start your journey?</h3>
+      <p style="font-size:15px;color:var(--ink-soft);line-height:1.75;margin-bottom:2rem;">Send a message and Maria will reply within 24 hours with a free 20-minute intro call to understand your goals and match you to the right plan.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:Mariahabib2207@gmail.com">
+          <div class="contact-link-icon">✉️</div>Mariahabib2207@gmail.com
         </a>
-        <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1" data-responsive-from="XL">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
-            <a class="u-button-style u-custom-border u-custom-border-color u-custom-borders u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-nav-container">
-            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-base u-text-grey-90 u-text-hover-palette-4-base" href="#Home" style="padding: 10px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-base u-text-grey-90 u-text-hover-palette-4-base" href="#About" style="padding: 10px;">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-base u-text-grey-90 u-text-hover-palette-4-base" href="#Courses" style="padding: 10px;">Courses</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-base u-text-grey-90 u-text-hover-palette-4-base" href="#Contact" style="padding: 10px;">Contact</a>
-</li></ul>
-          </div>
-          <div class="u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#Home">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#About">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#Courses">Courses</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#Contact">Contact</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-      </div></header>
-    <section class="u-clearfix u-image u-section-1" id="Home" data-image-width="4792" data-image-height="4167">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="custom-expanded u-align-left u-black u-container-align-center-xs u-container-align-left-lg u-container-align-left-md u-container-align-left-sm u-container-style u-group u-opacity u-opacity-85 u-radius-20 u-shape-round u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="500">
-          <div class="u-container-layout u-container-layout-1">
-            <h1 class="u-align-center-xs u-align-left-lg u-align-left-md u-align-left-sm u-text u-text-palette-4-base u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="500">Empowering Minds, Inspiring Futures: Join Maria Habib's Online Learning Community </h1>
-            <p class="u-align-center-xs u-align-left-lg u-align-left-md u-align-left-sm u-text u-text-default u-text-2">Empoweing indviduals to thrive in digital era </p>
-          </div>
+        <a class="contact-link" href="tel:+601128764820">
+          <div class="contact-link-icon">📞</div>+60-11-2876-4820
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/maria-habib" target="_blank" rel="noopener">
+          <div class="contact-link-icon">💼</div>linkedin.com/in/maria-habib
+        </a>
+        <a class="contact-link" href="#">
+          <div class="contact-link-icon">📍</div>Kuala Lumpur, Malaysia · Remote coaching worldwide
+        </a>
+      </div>
+    </div>
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" placeholder="Alex Chen" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="alex@email.com" required>
         </div>
       </div>
-    </section>
-    <section class="u-align-left u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-palette-4-base u-typography-Normal--Introduction u-section-2" src="" id="carousel_99b8">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-expanded-width u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-align-center u-border-1 u-border-grey-15 u-container-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1000">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span class="u-align-center u-file-icon u-icon u-icon-circle u-palette-4-dark-1 u-icon-1"><img src="images/1055674.png" alt=""></span>
-                <h3 class="u-align-center u-custom-font u-font-titillium-Web u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">My Strategy </h3>
-                <p class="u-align-center u-text u-text-grey-50 u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"> I understand that each learner is unique, and that's why our approach focuses on tailored strategies to suit different learning styles. Whether you're a visual learner, an auditory learner, or a hands-on learner, our courses are designed to cater to your individual preference</p>
-              </div>
-            </div>
-            <div class="u-align-center u-border-1 u-border-grey-15 u-container-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1000">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-align-center u-file-icon u-icon u-icon-circle u-palette-4-dark-1 u-icon-2"><img src="images/2818069.png" alt=""></span>
-                <h3 class="u-align-center u-custom-font u-font-titillium-Web u-text u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Interactive Learning </h3>
-                <p class="u-align-center u-text u-text-grey-50 u-text-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"> Learning is most effective when it's interactive.My courses incorporate a variety of interactive elements such as quizzes, discussions, and hands-on projects to keep you engaged and reinforce your understanding of the material</p>
-              </div>
-            </div>
-            <div class="u-align-center u-border-1 u-border-grey-15 u-container-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-3" data-animation-name="customAnimationIn" data-animation-duration="1000">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3"><span class="u-align-center u-file-icon u-icon u-icon-circle u-palette-4-dark-1 u-icon-3"><img src="images/2706950.png" alt=""></span>
-                <h3 class="u-align-center u-custom-font u-font-titillium-Web u-text u-text-5" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Support </h3>
-                <p class="u-align-center u-text u-text-grey-50 u-text-6" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"> Learning is a journey, and we're here to support you every step of the way I will be always ready to answer your questions, provide feedback, and guide you through your learning experience. You're not just a student; you're a valued member of our learning community.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="form-group">
+        <label for="level">Current experience level</label>
+        <select id="level">
+          <option value="">Select your level…</option>
+          <option>Complete beginner — no coding experience</option>
+          <option>Tried tutorials but need more structure</option>
+          <option>Know basics, want to go full stack</option>
+          <option>Mid-level, want to sharpen specific skills</option>
+        </select>
       </div>
-    </section>
-    <section class="u-align-center u-black u-clearfix u-section-3" id="Courses">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-custom-font u-font-montserrat u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="250">Courses </h2>
-        <div class="custom-expanded u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-border-9 u-border-no-bottom u-border-no-left u-border-no-right u-border-palette-4-light-2 u-container-style u-list-item u-radius u-repeater-item u-shape-round u-white u-list-item-1" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="250" data-animation-direction="X">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <div class="u-image u-image-circle u-image-1" alt="" data-image-width="1200" data-image-height="600"></div>
-                <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-2"> Computer Science Courses For Cambride Students​&nbsp; - 0478 &amp; 9618</h4>
-                <ul class="u-align-left u-text u-text-3">
-                  <li> Introduction to Computer Science</li>
-                  <li>Programming Fundamentals</li>
-                  <li>Basics of programming language</li>
-                  <li>(Python)</li>
-                  <li>Computer Hardware and SoftwareOperating Systems</li>
-                  <li>Networks and the Internet</li>
-                  <li>Databases</li>
-                  <li>Cybersecurity and Ethics</li>
-                  <li>Software Development Life Cycle</li>
-                  <li>Advanced Programming Concepts</li>
-                  <li>Database Design and Implementation</li>
-                  <li>Advanced Data Structures and Algorithms</li>
-                  <li>Artificial Intelligence and Machine Learning</li>
-                  <li>Computer Networks and Communication</li>
-                  <li>Advanced Software EngineeringS</li>
-                  <li>oftware design patterns.</li>
-                  <li>Testing methodologies</li>
-                  <li>kEmerging Technologies</li>
-                </ul>
-              </div>
-            </div>
-            <div class="u-border-9 u-border-no-bottom u-border-no-left u-border-no-right u-border-palette-4-light-2 u-container-style u-list-item u-radius u-repeater-item u-shape-round u-white u-list-item-2" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="250" data-animation-direction="X">
-              <div class="u-container-layout u-similar-container u-container-layout-2">
-                <div class="u-image u-image-circle u-image-2" alt="" data-image-width="1920" data-image-height="1080"></div>
-                <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-4"> Professional Ruby On Rails Development<br>Course
-                </h4>
-                <ul class="u-align-left u-text u-text-5">
-                  <li> Introduction to RailsModel View-Controller (MVC) Architecture</li>
-                  <li>ActiveRecord Routing and RESTful APIs&nbsp;</li>
-                  <li>Views and Templates Forms</li>
-                  <li>Authentication and Authorization</li>
-                  <li>&nbsp;Testing in Rails&nbsp;</li>
-                  <li>Background Jobs and Queues</li>
-                  <li>WebSockets and Real-Time Features</li>
-                  <li>Security Best Practices</li>
-                  <li>API Integration</li>
-                  <li>Continuous Learning and Resource</li>
-                  <li>Project work</li>
-                </ul>
-              </div>
-            </div>
-            <div class="u-border-9 u-border-no-bottom u-border-no-left u-border-no-right u-border-palette-4-light-2 u-container-style u-list-item u-radius u-repeater-item u-shape-round u-white u-list-item-3" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="250" data-animation-direction="X">
-              <div class="u-container-layout u-similar-container u-container-layout-3">
-                <div class="u-image u-image-circle u-image-3" alt="" data-image-width="728" data-image-height="377"></div>
-                <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-6"> Professional<br>Python Development
-                </h4>
-                <ul class="u-align-left u-text u-text-7">
-                  <li> Basic Python Syntax</li>
-                  <li>Functions and Modules</li>
-                  <li>Data Structures</li>
-                  <li>File Handling</li>
-                  <li>Error Handling</li>
-                  <li>Introduction to OOP (Object-Oriented Programming)</li>
-                  <li>Introduction to Libraries/Frameworks</li>
-                  <li>Advanced Data Structures</li>
-                  <li>Advanced OOP Concepts</li>
-                  <li>Database Interaction</li>
-                  <li>APIs and Web Scraping</li>
-                  <li>Testing in Python</li>
-                  <li>GUI Programming</li>
-                  <li>Dive into libraries like NumPy, pandas for data manipulation</li>
-                  <li>Exploring web frameworks like Flask or Django</li>
-                </ul>
-              </div>
-            </div>
-            <div class="u-border-9 u-border-no-bottom u-border-no-left u-border-no-right u-border-palette-4-light-2 u-container-style u-list-item u-radius u-repeater-item u-shape-round u-white u-list-item-4" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="250" data-animation-direction="X">
-              <div class="u-container-layout u-similar-container u-container-layout-4">
-                <div class="u-image u-image-circle u-image-4" alt="" data-image-width="5000" data-image-height="3333"></div>
-                <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-8"> Full Stack Web development</h4>
-                <ul class="u-align-left u-text u-text-9">
-                  <li> Introduction to Web Development</li>
-                  <li>HTML and CSSResponsive Web Design</li>
-                  <li>JavaScript Basics</li>
-                  <li>Document Object Model (DOM)</li>
-                  <li>Front-End Frameworks</li>
-                  <li>Version Control with Git</li>
-                  <li>Back-End Development</li>
-                  <li>Databases</li>
-                  <li>Server-Side Frameworks</li>
-                  <li>RESTful APIs</li>
-                  <li>Authentication and Authorization</li>
-                  <li>Web Security Best Practices</li>
-                  <li>Web Deployment</li>
-                  <li>Testing</li>
-                  <li>Performance Optimization</li>
-                  <li>Web Development Tools</li>
-                  <li>Project Work</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="form-group">
+        <label for="goal">What's your main goal?</label>
+        <textarea id="goal" placeholder="e.g. I want to build a web app for my business, or land a developer job within 6 months…"></textarea>
       </div>
-    </section>
-    <section class="u-align-center u-clearfix u-palette-4-base u-section-4" id="About">
-      <div class="u-expanded-width u-shape u-shape-rectangle u-white u-shape-1"></div>
-      <div class="u-align-center u-container-style u-group u-group-1">
-        <div class="u-container-layout u-container-layout-1">
-          <h2 class="u-text u-text-body-color u-text-1">About Me</h2>
-          <p class="u-text u-text-body-color u-text-2"> I'm Maria habib a skilled full-stack developer and online tutor with more than 3 years of experience in the tech industry. My passion lies in both crafting innovative software solutions and helping aspiring individuals achieve ​their dreams through online teaching<br>
-            <br>&nbsp;My motivation stems from seeing others achieve their dreams. I believe in the transformative power of education and technology. Through my teaching and development work, I aspire to contribute positively to the world by empowering individuals to thrive in the digital era&nbsp;
-          </p>
-          <a href="files/MariaResume.pdf" class="u-black u-border-none u-btn u-btn-round u-button-style u-file-link u-hover-palette-4-base u-radius u-btn-1">DownLoad Cv</a>
-          <img class="u-image u-image-default u-image-1" alt="" data-image-width="3000" data-image-height="3000" src="images/programming-background-collage.jpg" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">
-        </div>
-      </div>
-    </section>
-    <section class="u-align-center u-black u-clearfix u-section-5" id="Contact">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="custom-expanded u-align-center u-container-style u-group u-white u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-            <h2 class="u-align-center u-text u-text-body-color u-text-default u-text-1">Contact Me</h2>
-            <h5 class="u-align-center u-custom-font u-text u-text-body-color u-text-font u-text-2"> Any questions or remarks? Just write me a message!</h5>
-            <div class="u-form u-form-1">
-              <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-32 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
-                <div class="u-form-email u-form-group u-form-partition-factor-2">
-                  <label for="email-bb9b" class="u-label">Email</label>
-                  <input type="email" placeholder="Enter a valid email address" id="email-bb9b" name="email" class="u-grey-10 u-input u-input-rectangle u-radius-50" required="" wfd-id="id1096">
-                </div>
-                <div class="u-form-group u-form-name u-form-partition-factor-2">
-                  <label for="name-bb9b" class="u-label">Name</label>
-                  <input type="text" placeholder="Enter your Name" id="name-bb9b" name="name" class="u-grey-10 u-input u-input-rectangle u-radius-50" required="" wfd-id="id1097">
-                </div>
-                <div class="u-align-left u-form-group u-form-submit">
-                  <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-palette-4-base u-radius-50 u-btn-1">Submit</a>
-                  <input type="submit" value="submit" class="u-form-control-hidden" wfd-id="id1098">
-                </div>
-                <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                <input type="hidden" value="" name="recaptchaResponse" wfd-id="id1099">
-                <input type="hidden" name="formServices" value="83737e5c-43b8-b4d7-b9b7-69313fea692f">
-              </form>
-            </div>
-            <div class="custom-expanded u-list u-list-1">
-              <div class="u-repeater u-repeater-1">
-                <div class="u-align-center u-container-style u-grey-10 u-list-item u-repeater-item u-list-item-1">
-                  <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-border-2 u-border-palette-4-base u-file-icon u-icon u-icon-circle u-text-palette-4-base u-icon-1"><img src="images/542638-b0895d4d.png" alt=""></span>
-                    <p class="u-text u-text-3">mariahabib2219@gmail.com </p>
-                  </div>
-                </div>
-                <div class="u-align-center u-container-style u-grey-10 u-list-item u-repeater-item u-list-item-2">
-                  <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-border-2 u-border-palette-4-base u-file-icon u-icon u-icon-circle u-text-palette-4-base u-icon-2"><img src="images/3179068-2373f53f.png" alt=""></span>
-                    <p class="u-text u-text-4">H13 , Islamabad , Pakistan </p>
-                  </div>
-                </div>
-                <div class="u-align-center u-container-style u-grey-10 u-list-item u-repeater-item u-list-item-3">
-                  <div class="u-container-layout u-similar-container u-container-layout-4"><span class="u-border-2 u-border-palette-4-base u-file-icon u-icon u-icon-circle u-text-palette-4-base u-icon-3"><img src="images/ce131fa2-9b26-4c33-a9f7-aff3357242a7-689a1257.png" alt=""></span>
-                    <p class="u-text u-text-5">+923134994702 </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
- 
-</body></html>
+      <button type="submit" class="submit-btn" id="submitBtn">Send message →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>CodeWith Maria</span> · Maria Habib · Full Stack Python & Web Dev Coach · Kuala Lumpur, Malaysia</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 90);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Message sent! ✓';
+    btn.style.background = '#059669';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = 'Send message →'; btn.style.background = ''; btn.disabled = false; }, 4000);
+  }
+</script>
+</body>
+</html>
